@@ -1,9 +1,13 @@
-from flask import Flask
+from flask import Flask, jsonify
 app=Flask(__name__)
 
 @app.route("/")
 def index():
-    return "hello liki"
+    data={
+        "id":"001",
+        "name":"liki"
+    }
+    return jsonify(data)
 
 @app.route("/login")
 def login():
